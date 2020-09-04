@@ -4,11 +4,11 @@
       class="el-message-box__wrapper"
       tabindex="-1"
       v-show="visible"
-      @click.self="handleWrapperClick"
+      @click.self.stop="handleWrapperClick"
       role="dialog"
       aria-modal="true"
       :aria-label="title || 'dialog'">
-      <div class="el-message-box" :class="[customClass, center && 'el-message-box--center']">
+      <div @click.stop class="el-message-box" :class="[customClass, center && 'el-message-box--center']">
         <div class="el-message-box__header" v-if="title !== null">
           <div class="el-message-box__title">
             <div
